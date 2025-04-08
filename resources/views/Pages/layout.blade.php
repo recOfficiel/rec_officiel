@@ -30,8 +30,16 @@
 
     </head>
     <body>
+        {{--<x-spinner /> --}}
+        <x-spinner />
 
-        @yield('content')
+        {{-- <x-navbar /> --}}
+        <x-navbar />
+
+                @yield('content')
+
+        {{-- footer --}}
+        <x-footer/>
 
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
