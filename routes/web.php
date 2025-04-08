@@ -14,4 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PagesController::class, 'index'])->name('home');
+
+Route::controller(PagesController::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    Route::get('/annonces', 'annonce')->name('annonce');
+
+});

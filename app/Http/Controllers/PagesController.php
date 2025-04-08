@@ -11,4 +11,8 @@ class PagesController extends Controller
     {
         return view('pages.index');
     }
+    public function annonce(): View
+    {
+        return view('pages.Annonce');
+    }
 }
