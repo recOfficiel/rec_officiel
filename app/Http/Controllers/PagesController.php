@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Annonce;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class PagesController extends Controller
 {
@@ -12,15 +13,20 @@ class PagesController extends Controller
     {
         return view('pages.index');
     }
-    public function annonce(): View
+    public function annonce(Request $request): View
     {
-        $annonces = Annonce::with('categorie')->orderby('created_at', 'desc')->paginate(5);
-
+        $annonces = Annonce::query();
+        if($recherche = $request->recherche){
+            $annonces->where(function($query) use ($recherche) {
+                $query->where('titre', 'like', "%{$recherche}%")
+                      ->orWhere('contenu', 'like', "%{$recherche}%");
+            });
+        }
+        $annonces = $annonces->with('categorie')->orderBy('created_at', 'desc')->paginate(5);
         return view('pages.Annonce', [
-            'annonces' => $annonces,
+            'annonces' => $annonces
         ]);
-
-    }
+     }
 
     public function show(Annonce $annonce): View
     {

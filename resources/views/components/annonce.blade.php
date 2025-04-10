@@ -1,4 +1,4 @@
-@foreach ($annonces as $annonce )
+@forelse ($annonces as $annonce )
 
 <div class="col-lg-4 col-12 mb-4 wow fadeInUp animate__animated animate__bounce" data-wow-delay="0.1s">
     <div class="card border-0 shadow-lg h-100 hover-shadow">
@@ -28,4 +28,7 @@
     </div>
   </div>
 
-@endforeach
+@empty
+    <p class="fw-bold text-center">Aucune annonce disponible 🥲</p>
+    <p class="text-center">	beta tour ! 😉</p>
+@endforelse

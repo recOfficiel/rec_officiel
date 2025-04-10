@@ -19,18 +19,25 @@
 
 <!-- Page Header End -->
   <!-- recherche Start -->
- <div class="container mb-5">
-     <div class="row justify-content-center">
-         <div class="col-12 col-md-8 col-lg-6">
-             <div class="input-group">
-                 <input type="text" class="form-control" placeholder="Rechercher une actualité..." aria-label="Rechercher">
-                 <button class="btn" type="button" style="background-color: #3C3882; color: white;">
-                     <i class="fas fa-search"></i>
-                 </button>
-             </div>
-         </div>
-     </div>
- </div>
+ <!-- Recherche Start -->
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <form method="GET" action="{{ route('annonce') }}">
+                <div class="input-group">
+                    <input type="search" id="recherche" name="recherche" class="form-control"
+                           placeholder="Rechercher une actualité..." aria-label="Rechercher"
+                           value="{{ request('recherche') }}">
+                    <button class="btn" type="submit" style="background-color: #3C3882; color: white;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Recherche End -->
+
  <!--recherhce end -->
  <!-- Actualités Start -->
  <section class="products section-padding position-relative">
