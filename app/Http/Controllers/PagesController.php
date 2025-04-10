@@ -14,8 +14,8 @@ class PagesController extends Controller
     }
     public function annonce(): View
     {
-        $annonces = Annonce::with('categorie')->orderby('created_at', 'desc')->get();
-      
+        $annonces = Annonce::with('categorie')->orderby('created_at', 'desc')->paginate(5);
+
         return view('pages.Annonce', [
             'annonces' => $annonces,
         ]);

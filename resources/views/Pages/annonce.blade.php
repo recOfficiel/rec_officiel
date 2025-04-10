@@ -42,6 +42,9 @@
 
       </div>
     </div>
+    <!-- Start of Pagination -->
+    {{  $annonces->links('pagination::bootstrap-5') }}
+
   </section>
 <!-- actu end -->
 
