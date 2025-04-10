@@ -5,6 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\User;
+use App\Models\Role;
+use Illuminate\Support\Facades\Hash;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,11 +15,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(RoleSeeder::class);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $admin = User::create([
+            'name' => 'Sebastien Lumuna',
+            'email' => 'sebastienlumuna@gmail.com',
+            'password' => hash::make('password')
+
+
+         ]);
+
+           // recuperation du role a affecté a l'utilisateur
+
+           $roleadmin = Role::where('nom', 'admin')->first();
+           $admin->roles()->attach($roleadmin);
+
+
     }
 }
