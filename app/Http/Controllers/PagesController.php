@@ -21,4 +21,11 @@ class PagesController extends Controller
         ]);
 
     }
+
+    public function show(Annonce $annonce): View
+    {
+        return view('pages.show', [
+            'annonce' => $annonce,
+        ]);
+    }
 }
