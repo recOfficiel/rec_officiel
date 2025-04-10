@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\Annonce;
 
 class PagesController extends Controller
 {
@@ -13,6 +14,11 @@ class PagesController extends Controller
     }
     public function annonce(): View
     {
-        return view('pages.Annonce');
+        $annonces = Annonce::with('categorie')->orderby('created_at', 'desc')->get();
+      
+        return view('pages.Annonce', [
+            'annonces' => $annonces,
+        ]);
+
     }
 }
