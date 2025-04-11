@@ -50,7 +50,7 @@
                             <a href="#" class="dropdown-item">FAQ</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#3C3882'" onmouseout="this.style.color=''">Contact</a>
+                    <a href="{{ route('contact')}}" class="nav-item nav-link @if (request()->is('/contact')) active @endif wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#3C3882'" onmouseout="this.style.color=''">Contact</a>
                 </div>
                 <div class="ms-auto d-none d-lg-block">
                     <a href="#" class="btn btn-primary rounded-pill py-2 px-3 wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#ffff'" onmouseout="this.style.color=''" style="background-color: #293070;">Télécharger</a>
