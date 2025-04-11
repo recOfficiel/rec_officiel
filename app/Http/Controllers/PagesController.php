@@ -34,4 +34,9 @@ class PagesController extends Controller
             'annonce' => $annonce,
         ]);
     }
+
+    public function about(): View
+    {
+        return view('pages.apropos');
+    }
 }

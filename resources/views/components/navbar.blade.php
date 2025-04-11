@@ -37,7 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <a href="{{ route('home')}}" class="nav-item nav-link @if (request()->is('/')) active @endif wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#3C3882'" onmouseout="this.style.color=''">Accueil</a>
-                    <a href="about.html" class="nav-item nav-link  wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#3C3882'" onmouseout="this.style.color=''">À propos</a>
+                    <a href="{{ route('apropos')}}" class="nav-item nav-link @if (request()->is('/apropos')) active @endif wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#3C3882'" onmouseout="this.style.color=''">À propos</a>
                     <a href="{{ route('annonce')}}" class="nav-item nav-link  @if (request()->is('/annonce')) active @endif wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#3C3882'" onmouseout="this.style.color=''">Actualités et Evénements</a>
                     <a href="service.html" class="nav-item nav-link wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#3C3882'" onmouseout="this.style.color=''">Services aux Etudiants</a>
                     <div class="nav-item dropdown wow fadeInDown">
