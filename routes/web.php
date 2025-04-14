@@ -23,3 +23,7 @@ Route::controller(PagesController::class)->group(function () {
     Route::get('/annonces/{annonce}', 'show')->name('annonce.show');
 
 });
+
+
+// Auth
+require __DIR__.'/auth.php';
