@@ -51,10 +51,10 @@
                         </div>
                     </div>
                     <a href="{{ route('contact')}}" class="nav-item nav-link @if (request()->is('/contact')) active @endif wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#3C3882'" onmouseout="this.style.color=''">Contact</a>
+                    <a href="login.html" class="nav-link me-3 wow fadeInDown fs-6 animate__animated animate__pulse animate__bounce" onmouseover="this.style.color='#3C3882'; this.classList.add('animate__headShake')" data-wow-delay="0.1s" onmouseout="this.style.color=''; this.classList.remove('animate__headShake')" style="margin-top: -8px;"><button class="btn btn-primary" style="background-color: #293070;"><i class="fas fa-user-circle fa-lg"></i> Se connecter</button></a>
+                
                 </div>
-                <div class="ms-auto d-none d-lg-block">
-                    <a href="#" class="btn btn-primary rounded-pill py-2 px-3 wow fadeInDown" data-wow-delay="0.1s" onmouseover="this.style.color='#ffff'" onmouseout="this.style.color=''" style="background-color: #293070;">Télécharger</a>
-                </div>
+
             </div>
         </nav>
     </div>
