@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class LoginController extends Controller
 {
     //
-    public function login():View
+    public function login_form():View
     {
         return view('auth.login');
     }

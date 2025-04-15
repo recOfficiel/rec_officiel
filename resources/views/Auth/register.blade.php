@@ -80,7 +80,7 @@ iv class="container">
 
                         <!-- Lien vers la connexion -->
                         <div class="text-center mt-4">
-                            <p class="text-muted">Vous avez déjà un compte ? <a href="login.html" class="text-decoration-none">Se connecter</a></p>
+                            <p class="text-muted">Vous avez déjà un compte ? <a href="{{ route('login')}}" class="text-decoration-none">Se connecter</a></p>
                         </div>
                     </form>
                 </div>

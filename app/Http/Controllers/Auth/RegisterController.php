@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class RegisterController extends Controller
 {
     //
-    public function register(): View
+    public function register_form(): View
     {
         return view('auth.register');
     }

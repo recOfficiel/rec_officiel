@@ -59,7 +59,7 @@
                         </button>
                     </div>                        <!-- Lien vers l'inscription -->
                     <div class="text-center mt-4 animate__animated animate__fadeIn animate__delay-2s">
-                        <p class="text-muted">Vous n'avez pas de compte ? <a href="register.html" class="text-decoration-none">S'inscrire</a></p>
+                        <p class="text-muted">Vous n'avez pas de compte ? <a href="{{ route('register')}}" class="text-decoration-none">S'inscrire</a></p>
                     </div>
                 </form>
                 <!-- Téléchargement de l'application -->
