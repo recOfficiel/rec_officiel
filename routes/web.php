@@ -20,6 +20,7 @@ Route::controller(PagesController::class)->group(function () {
     Route::get('/annonces', 'annonce')->name('annonce');
     Route::get('/apropos', 'about')->name('apropos');
     Route::get('/contact', 'contact')->name('contact');
+    Route::post('/annonces/{annonce}/commentaire', 'commentaire')->name('annonce.commentaire'); 
     Route::get('/annonces/{annonce}', 'show')->name('annonce.show');
 
 });
