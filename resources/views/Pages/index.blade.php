@@ -11,12 +11,13 @@
 <!-- About Start -->
 
 
+ {{-- afficahge des messages de succès --}}
+ @if(session('success'))
+ <div class="alert alert-success text-center mx-5" role="alert">
+     {{ session('success') }}
+   </div>
+ @endif
 
-@if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
 <section id="about" class=" section my-5">
 
     <div class="container" data-aos="fade-up">
