@@ -4,12 +4,19 @@
 
 @section('content')
 
- 
+
 {{-- carrousle --}}
 
 <x-caroussel />
 <!-- About Start -->
 
+
+
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <section id="about" class=" section my-5">
 
     <div class="container" data-aos="fade-up">

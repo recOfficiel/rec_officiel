@@ -13,22 +13,32 @@
                     <p class="text-muted">Entrez vos informations pour accéder à votre espace 😊💦!</p>
                 </div>
 
-                <form class="animate__animated animate__fadeInUp shadow p-4 rounded">
+                <form class="animate__animated animate__fadeInUp shadow p-4 rounded" method="POST" action="{{ route('login') }}">
                     <!-- Champ Email -->
+                    @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Adresse Email</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-envelope" style="color: #007bff;"></i></span>
-                            <input type="email" class="form-control" id="email" placeholder="votre@email.com" required>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email"  placeholder="votre@email.com" required>
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
-
                     <!-- Champ Mot de passe -->
                     <div class="mb-3">
                         <label for="password" class="form-label">Mot de passe</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-lock" style="color: #28a745;"></i></span>
-                            <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="••••••••" required>
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
 
@@ -42,7 +52,7 @@
                     </div>
 
                     <!-- Bouton de connexion -->
-                    <a href="dashbord.html" class="btn btn-primary w-100 mb-3 animate__animated animate__pulse animate__infinite">Se connecter</a>
+                    <button type="submit" class="btn btn-primary w-100 mb-3 animate__animated animate__pulse animate__infinite">Se connecter</button>
 
                     <!-- Séparateur -->
                     <div class="divider d-flex align-items-center my-4">
