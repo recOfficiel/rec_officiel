@@ -50,6 +50,20 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class);
     }
+
+    // fonction pour savoir si un utilisateur a un role
+    public function hasRole(string $role): bool
+    {
+        return $this->roles()->where('nom', $role)->exists();
+    }
+
+    // fonction pour rediriger l'utilisateur en fonction de son role
+    public function redirectTo(): string
+    {
+        return $this->hasRole('admin')
+        ? route('admin.dashboard')
+        : route('user.dashboard');
+    }
     // relation entre user et annonce
     public function annonces(): HasMany
     {
