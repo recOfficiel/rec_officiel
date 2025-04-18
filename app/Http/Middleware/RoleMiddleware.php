@@ -21,7 +21,7 @@ class RoleMiddleware
             return redirect()->route('login');
         }
         // verifaction si l'utilisateur a le role
-        if (!auth()->user()->roles()->where('name', $role)->exists()) {
+        if (!auth()->user()->roles()->where('nom', $role)->exists()) {
             abort(403, 'Accès refusé');
         }
 
