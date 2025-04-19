@@ -62,7 +62,7 @@ class User extends Authenticatable
     {
         return $this->hasRole('admin')
         ? route('admin.dashboard')
-        : route('user.dashboard');
+        : route('client.dashboard');
     }
     // relation entre user et annonce
     public function annonces(): HasMany

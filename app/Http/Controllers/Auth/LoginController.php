@@ -35,7 +35,7 @@ class LoginController extends Controller
         // recuparation du role de l'utilisateur
         $user = Auth::user()->load('roles');
         session()->flash('success', 'Connexion réussie');
-        return redirect()->intended($user->Redirecto());
+        return redirect()->intended($user->redirectTo());
     }
 
     public function logout(Request $request): RedirectResponse
