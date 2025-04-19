@@ -40,9 +40,11 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
+        $user->load('roles');
+
         session()->flash('success', 'Inscription réussie');
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->intended($user->redirectTo());
 
     }
 }
